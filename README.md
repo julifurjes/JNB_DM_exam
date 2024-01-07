@@ -4,8 +4,8 @@
 
 This is the exam project of:
 
-Nanna Marie Steenholdt (NMS), 201805892@post.au.dk
-Julia Flora Fürjes (JFF), 202006018@post.au.dk
+Nanna Marie Steenholdt (NMS), 201805892@post.au.dk <br>
+Julia Flora Fürjes (JFF), 202006018@post.au.dk <br>
 Bianka Szöllösi (BIS), biankasz@mgmt.au.dk
 
 ### File structure
