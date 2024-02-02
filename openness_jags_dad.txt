@@ -1,0 +1,23 @@
+### FATHER ###
+
+model {
+  # Prior for the probability of choosing "healthy" (openness = 1)
+  theta ~ dbeta(1, 1)T(0.001, 0.999)
+
+  # Prior for the effect of relationship quality
+  beta_rel_dad ~ dnorm(0, 1)
+  
+  # Prior for the effect of father attachment style issues
+  beta_dad ~ dnorm(0, 1)
+  
+  # Prior for the effect of interparental communication
+  beta_ip_dad ~ dnorm(0, 1)
+
+  for (p in 1:nsubjects) {
+    theta_q_dad[p] <- (1-(beta_rel_dad+beta_dad+beta_ip_dad))*theta + beta_rel_dad*bin_rel[p] + beta_dad*bin_dad[p] + beta_ip_dad*bin_ip[p]
+    
+    bin_open[p] ~ dbin(theta_q_dad[p], 1) 
+  }
+}
+
+

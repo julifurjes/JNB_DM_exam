@@ -1,0 +1,23 @@
+### MOTHER ###
+
+model {
+  # Prior for the probability of choosing "healthy" (openness = 1)
+  theta ~ dbeta(1, 1)T(0.001, 0.999)
+
+  # Prior for the effect of relationship quality
+  beta_rel_mom ~ dnorm(0, 1)
+  
+  # Prior for the effect of mother attachment style issues
+  beta_mom ~ dnorm(0, 1)
+  
+  # Prior for the effect of interparental communication
+  beta_ip_mom ~ dnorm(0, 1)
+
+  for (p in 1:nsubjects) {
+    theta_q_mom[p] <- (1-(beta_rel_mom+beta_mom+beta_ip_mom))*theta + beta_rel_mom*bin_rel[p] + beta_mom*bin_mom[p] + beta_ip_mom*bin_ip[p]
+    
+    bin_open[p] ~ dbin(theta_q_mom[p], 1) 
+  }
+}
+
+

@@ -1,0 +1,20 @@
+### NO PARENT ###
+
+model {
+  # Prior for the probability of choosing "healthy" (openness = 1)
+  theta ~ dbeta(1, 1)T(0.001, 0.999)
+
+  # Prior for the effect of relationship quality
+  beta_rel_no ~ dnorm(0, 1)
+  
+  # Prior for the effect of interparental communication
+  beta_ip_no ~ dnorm(0, 1)
+
+  for (p in 1:nsubjects) {
+    theta_q_no[p] <- theta + beta_rel_no*bin_rel[p] + beta_ip_no*bin_ip[p]
+    
+    bin_open[p] ~ dbin(theta_q_no[p], 1) 
+  }
+}
+
+
