@@ -16,17 +16,24 @@ Bianka Szöllösi (BIS), biankasz@mgmt.au.dk
 
 The data was acquired from Final_Data_Attachment and Close Relationships_June 15, 2020_09.39.Xlsx (2020)
 
-#### The model
-- `openness_modelling.R` is the main script for modelling, including the preprocessing of the data and both models.
-- `openness_jags_mom.txt` is the JAGS file corresponding to the mother attachment style model.
-- `openness_jags_dad.txt` is the JAGS file corresponding to the father attachment style model.
+#### Preprocessing and the model
+- `preprocessing_data.R` is where the data is preprocessed and is converted to binary values.
+- `modelling.R` is the main script for modelling.
+- `openness_jags_mom.txt` is the JAGS file corresponding to the Mother attachment model.
+- `openness_jags_dad.txt` is the JAGS file corresponding to the Father attachment model.
+- `openness_jags_na.txt` is the JAGS file corresponding to the No parental attachment model.
 
 #### Parameter recovery
-- `open_parameter_recovery_mom.txt` is the parameter recovery corresponding to the mother attachment style model.
-- `open_parameter_recovery_dad.txt` is the parameter recovery corresponding to the father attachment style model.
+- `open_parameter_recovery_mom.txt` is the parameter recovery corresponding to the Mother attachment model.
+- `open_parameter_recovery_dad.txt` is the parameter recovery corresponding to the Father attachment model.
+- `open_parameter_recovery_no.txt` is the parameter recovery corresponding to the No parental attachment model.
+- `openness_three_sim.R` is used in the parameter recovery for simulation for both the Mother and the Father attachment model.
+- `openness_three_no.R` is used in the parameter recovery for simulation for the No parental attachment model.
 
-#### Posterior predictor thing
-- insert file name when its done.
+#### Posterior Predictive Checks (PPC)
+- `PPC_open_mom.R` is the PPC corresponding to the Mother attachment model.
+- `PPC_open_dad.R` is the PPC corresponding to the Father attachment model.
+- `PPC_open_no.R` is the PPC corresponding to the No parental attachment model.
 
 ### Resources
 
