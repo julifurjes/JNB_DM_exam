@@ -21,7 +21,7 @@ The data was acquired from Final_Data_Attachment and Close Relationships_June 15
 - `modelling.R` is the main script for modelling.
 - `openness_jags_mom.txt` is the JAGS file corresponding to the Mother attachment model.
 - `openness_jags_dad.txt` is the JAGS file corresponding to the Father attachment model.
-- `openness_jags_na.txt` is the JAGS file corresponding to the No parental attachment model.
+- `openness_jags_no.txt` is the JAGS file corresponding to the No parental attachment model.
 
 #### Parameter recovery
 - `open_parameter_recovery_mom.txt` is the parameter recovery corresponding to the Mother attachment model.
